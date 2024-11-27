@@ -30,6 +30,7 @@ func func_main() {
 
 	notIgnored, _ := multiReturnWithIgnore(10)
 	// remember that Go cannot have unused variables, to ignore something you don't require use the '_'
+	
 	fmt.Println(notIgnored)
 
 	a, b := namedReturns(10, 5)
