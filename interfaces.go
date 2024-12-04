@@ -69,7 +69,7 @@ func checkShape(shape interface{}) float64 {
 	}
 }
 
-func main() {
+func interfaces_main() {
 	alex := Human{name: "Alex"}
 	fmt.Println(alex.sound())
 

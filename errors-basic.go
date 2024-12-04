@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -8,7 +9,6 @@ import (
 // In try blocks we might put many "dangerous" functions together, with just a single error logic
 // In Go, we are forced to think about all types of errors separately
 // All errors implement the 'error' interface
-
 
 // ***********************************************************************
 // 1. Returning Errors From Functions
@@ -30,7 +30,6 @@ func greetUser(id int) (greeting string, err error) {
 	}
 }
 
-
 // ************************************************************************
 // 2. Error Interface and Handling Errors Like a Pro ...
 type LoginError struct {
@@ -45,6 +44,15 @@ func (loginErr LoginError) Error() string {
 }
 
 
+// ***********************************************************************
+// 3. using the "errors" package for easy error handling
+func passwordMatch(pass string) (authToken string, err error) {
+	if pass != "password123" {
+		return "", errors.New("Password is wrong")
+	}
+	return fmt.Sprintf("Password matched"), nil
+}
+
 func err_main() {
 	greetings, err := greetUser(-55)
 	if err != nil {
@@ -57,5 +65,14 @@ func err_main() {
 	// lets say we encounter error as not registered
 	newLoginErr := LoginError{code: 404, msg: "Not Registered"}
 	fmt.Println(newLoginErr.Error())
+
+
+	// Example of 3., Using the Errors package
+	msg, err := passwordMatch("hey")
+	if err != nil {
+		fmt.Println("Error : ", err)
+	} else {
+		fmt.Println("Great! ", msg)
+	}
 
 }
