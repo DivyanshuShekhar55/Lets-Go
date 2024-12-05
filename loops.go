@@ -27,7 +27,7 @@ func whileLoop(n int) {
 	}
 }
 
-func _main() {
+func loops_main() {
 	forLoop(5)
 
 	fmt.Println("\nWhile Loop Ahead ...")
