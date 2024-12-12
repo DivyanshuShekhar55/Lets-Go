@@ -77,7 +77,7 @@ func adding() {
 	names := []string{"Mickey", "Donald", "Pooh"}
 
 	// ✅ always re-assign the returned new slice
-	// ❌ DON'T : someSlice = append(slice, newItem)
+	// ❌ DON'T : someOtherSlice = append( originalSlice, newItem )
 	names = append(names, "Superman")
 }
 
