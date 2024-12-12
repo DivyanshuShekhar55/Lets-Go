@@ -81,7 +81,7 @@ func adding() {
 	names = append(names, "Superman")
 }
 
-func main() {
+func slices_main() {
 	fmt.Println("Length is", count("Harry", "PrimeAgen", "FreecodeCamp"))
 	experimentSlices()
 
