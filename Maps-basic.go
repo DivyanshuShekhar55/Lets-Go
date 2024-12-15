@@ -87,7 +87,7 @@ func add(name_letter_map map[rune]map[string]int, names []string) {
 }
 
 
-func main() {
+func maps_main() {
 	basicFunctions()
 
 	// example for point 3. nested map values ...
