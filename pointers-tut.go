@@ -21,7 +21,7 @@ func updatePointerValue(ptr *int){
 	// updates value of ptr even though we haven't returned the new ptr value
 }
 
-func main() {
+func pointers_main() {
 
 	// Pointers hold the address of some data value
 	// very similar to C++, except that Pointer Arithmetic not allowed
