@@ -1,0 +1,26 @@
+Please refer to https://www.youtube.com/watch?v=h3fqD6IprIA&t=6403s - video on Backend Engineering by Tiago. 
+NOTE : my tutorial does not contain any code, only contains the basic structure for your reference  
+visit his repo : https://github.com/sikozonpc/GopherSocial/commits/dev/
+
+**************************************************************************************
+
+A quick review of what all these folders are for :
+
+>> bin is for all your compiled code endpoint
+>> cmd is where your main logic lives, get, post amd all methods and server configs
+>> migrate is for db migrations
+>> web is for your frontend code (React, Angular, Vanilla, etc)
+>> internal is for all those go packages (files/func) which are not for the outer world (non-exportables) ... like rate limiters and so on
+>> scripts is for containing scripts for starting server
+>> docs is for swagger docs
+
+***************************************************************************************
+
+Now for hot reloading we can use Air-verse (what Nodemon does in a Node project)
+>> install air-verse in your machine
+>> run `air init` and change the default settings (we have changed following fileds : tmp_dir, bin, cmd, exclude_dir)
+>> run command `air`
+
+For advanced http features like middleware and grouping (not yet provided by net/http) we use the `Chi` library
+
+For dotenv we can use the godotenv library to read from .env file
